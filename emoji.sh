@@ -36,12 +36,12 @@ time ~/tesseract/src/training/tesstrain.sh \
 --overwrite \
 --output_dir ./emojilegacy
 
+mv  ./emojilegacy/eng.traineddata  ./emojilegacy/emoji.traineddata 
+
 cd emojitest
-time tesseract eng.FreeSerif.exp0.tif eng.FreeSerif.exp0.tif --tessdata-dir ../emojilegacy --psm 6
-time tesseract eng.Quivira.exp0.tif eng.Quivira.exp0.tif --tessdata-dir ../emojilegacy --psm 6
-time tesseract eng.Noto_Emoji.exp0.tif eng.Noto_Emoji.exp0.tif --tessdata-dir ../emojilegacy --psm 6
-
-time tesseract eng.Noto_Color_Emoji.exp0.tif eng.Noto_Color_Emoji.exp0.tif --tessdata-dir ../emojilegacy --psm 6
-
-time tesseract eng.Symbola_Semi-Condensed.exp0.tif eng.Symbola_Semi-Condensed.exp0.tif --tessdata-dir ../emojilegacy --psm 6
+time tesseract eng.FreeSerif.exp0.tif eng.FreeSerif.exp0.tif --tessdata-dir ../emojilegacy --psm 6 -l emoji
+time tesseract eng.Quivira.exp0.tif eng.Quivira.exp0.tif --tessdata-dir ../emojilegacy --psm 6 -l emoji
+time tesseract eng.Noto_Emoji.exp0.tif eng.Noto_Emoji.exp0.tif --tessdata-dir ../emojilegacy --psm 6 -l emoji
+time tesseract eng.Noto_Color_Emoji.exp0.tif eng.Noto_Color_Emoji.exp0.tif --tessdata-dir ../emojilegacy --psm 6 -l emoji
+time tesseract eng.Symbola_Semi-Condensed.exp0.tif eng.Symbola_Semi-Condensed.exp0.tif --tessdata-dir ../emojilegacy --psm 6 -l emoji
 
